@@ -1,0 +1,120 @@
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* left | center | right */
+  align-items: center;
+  padding: 22px 60px;
+  background: var(--cream);
+  border-bottom: 1px solid var(--sand);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+/* LOGO */
+.navbar-logo {
+  justify-self: start;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: var(--dark);
+}
+
+/* CENTER LINKS */
+.navbar-links {
+  justify-self: center;
+  list-style: none;
+  display: flex;
+  gap: 36px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--mocha);
+  transition: color 0.25s;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+/* underline animation */
+.navbar-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 0; 
+  height: 1px;
+  background: var(--mocha);
+  transition: width 0.3s ease;
+}
+
+.navbar-links li a:hover::after,
+.navbar-links li a.active::after {
+  width: 100%;
+}
+
+.navbar-links li a:hover,
+.navbar-links li a.active {
+  color: var(--dark);
+}
+
+/* RIGHT - GITHUB */
+.navbar-github {
+  justify-self: end;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--mocha);
+  text-decoration: none;
+  position: relative;
+}
+
+/* same hover effect */
+.navbar-github::after {
+  content: '';
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 0; 
+  height: 1px;
+  background: var(--mocha);
+  transition: width 0.3s ease;
+}
+
+.navbar-github:hover::after {
+  width: 100%;
+}
+
+.navbar-github:hover {
+  color: var(--dark);
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .navbar {
+    grid-template-columns: auto auto;
+    padding: 18px 24px;
+  }
+
+  .navbar-links {
+    gap: 20px;
+  }
+
+  .navbar-logo {
+    font-size: 17px;
+    letter-spacing: 3px;
+  }
+
+  .navbar-github {
+    display: none; 
+  }
+}

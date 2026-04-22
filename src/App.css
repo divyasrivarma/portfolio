@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+:root {
+  --cream: #fdf6f0;
+  --blush: #f5ebe0;
+  --sand: #e8d5c4;
+  --tan: #c9a98a;
+  --mocha: #8b6f5e;
+  --dark: #3d2b1f;
+  --text: #5a3e32;
+  --white: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
+body {
+  background-color: var(--cream);
+  color: var(--text);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* ── Scroll animation ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fade-up {
+  animation: fadeUp 0.8s ease forwards;
 }
+
+.fade-up-delay-1 { animation-delay: 0.15s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeUp; animation-duration: 0.8s; }
+.fade-up-delay-2 { animation-delay: 0.30s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeUp; animation-duration: 0.8s; }
+.fade-up-delay-3 { animation-delay: 0.45s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeUp; animation-duration: 0.8s; }
